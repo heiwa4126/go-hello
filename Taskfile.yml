@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: "3"
+
+vars:
+  GREETING: Hello, world!
+
+tasks:
+  default:
+    desc: Default task
+    cmds:
+      - task: run
+
+  hello:
+    desc: Print a greeting message
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+
+  run:
+    desc: Run the Go application
+    cmds:
+      - go run main.go
+  lint:
+    desc: Run linter on the Go code
+    cmds:
+      - golangci-lint run ./...
+
+  build:
+    desc: Build the Go application
+    cmds:
+      - go build -o gohello -ldflags "-s -w" main.go
+      - upx gohello
