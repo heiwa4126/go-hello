@@ -17,4 +17,4 @@ go.work
 # VSCode
 .vscode/
 
-gohello
+go-hello
