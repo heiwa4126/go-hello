@@ -26,10 +26,14 @@ tasks:
     cmds:
       - go vet ./...
       - golangci-lint run ./...
+  audit:
+    cmds:
+      - govulncheck ./...
   fmt:
     desc: Format the Go code
     cmds:
       - go fmt ./...
+      - goimports -w .
       - oxfmt
   update:
     desc: Update dependencies and format the Go code
