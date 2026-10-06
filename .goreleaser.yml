@@ -10,7 +10,7 @@ builds:
   - main: .
     binary: go-hello
     goos:
-      # - windows
+      - windows
       - linux
     goarch:
       - amd64
