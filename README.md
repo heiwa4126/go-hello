@@ -11,6 +11,6 @@ task
 
 ## メモ: Windows の場合
 
-`task build` のあと `rename go-hello go-hello.exe` しましょう。
+`task build`のあと`rename go-hello go-hello.exe`しましょう。
 
-aqua のインストールは `winget install aquapro.aqua` が楽です。
+aqua のインストールは`winget install aquapro.aqua`が楽です。
