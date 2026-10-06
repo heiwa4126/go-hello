@@ -4,6 +4,7 @@ version: "3"
 
 vars:
   GREETING: Hello, world!
+  BINARY: go-hello
 
 tasks:
   default:
@@ -83,11 +84,9 @@ tasks:
   build:
     desc: Build the Go application
     cmds:
-      - go build -o go-hello -ldflags "-s -w" main.go
-      - upx go-hello
+      - go build -trimpath -buildvcs=false -o {{.BINARY}} -ldflags "-s -w" main.go
 
   release:
     desc: Build and release the Go application using GoReleaser v2
     cmds:
-      - rm -rf dist
-      - goreleaser build --snapshot
+      - goreleaser build --snapshot --clean

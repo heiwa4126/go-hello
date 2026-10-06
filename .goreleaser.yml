@@ -8,12 +8,14 @@ before:
     - go mod tidy
 builds:
   - main: .
-    binary: go-hello
     goos:
       - windows
       - linux
     goarch:
       - amd64
+    flags:
+      - -trimpath
+      - -buildvcs=false
     ldflags:
       - -s -w
       - -X main.Version={{ .Version }}
