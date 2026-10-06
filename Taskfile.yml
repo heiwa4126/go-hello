@@ -3,20 +3,13 @@
 version: "3"
 
 vars:
-  GREETING: Hello, world!
-  BINARY: go-hello
+  BINARY: 'go-hello{{if eq OS "windows"}}.exe{{end}}'
 
 tasks:
   default:
     desc: Default task
     cmds:
       - task: run
-
-  hello:
-    desc: Print a greeting message
-    cmds:
-      - echo "{{.GREETING}}"
-    silent: true
 
   run:
     desc: Run the Go application
