@@ -9,7 +9,7 @@ aqua i
 task
 ```
 
-## メモ: Windows の場合
+### メモ: Windows の場合
 
 aqua のインストールは`winget install aquapro.aqua`が楽です。
 
@@ -19,9 +19,9 @@ aqua のインストールは`winget install aquapro.aqua`が楽です。
 task release
 ```
 
-で`dist/`に生成される。
+で`dist/`以下に Linux 版と Windows 版が生成される。
 
-GitHub に対して
+また、GitHub に対して
 
 ```sh
 git commit -am 'update something`
@@ -29,4 +29,4 @@ git tag v9.9.9
 git push --follow-tags
 ```
 
-で Release が生成される。
+で Releases が生成される。
