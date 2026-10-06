@@ -85,3 +85,9 @@ tasks:
     cmds:
       - go build -o go-hello -ldflags "-s -w" main.go
       - upx go-hello
+
+  release:
+    desc: Build and release the Go application using GoReleaser v2
+    cmds:
+      - rm -rf dist
+      - goreleaser build --snapshot

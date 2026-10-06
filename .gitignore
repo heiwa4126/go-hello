@@ -17,5 +17,7 @@ go.work
 # VSCode
 .vscode/
 
+dist/
+
 go-hello
 go-hello.exe

@@ -6,7 +6,15 @@ import (
 	cowsay "github.com/Code-Hex/Neo-cowsay/v2"
 )
 
+var (
+	Version  = "dev"
+	Revision = "unknown"
+)
+
 func main() {
+
+	fmt.Printf("Version: %s\nRevision: %s\n", Version, Revision)
+
 	say, err := cowsay.Say(
 		"Hello, World!",
 		cowsay.Type("default"),

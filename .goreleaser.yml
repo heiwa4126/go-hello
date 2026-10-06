@@ -1,3 +1,5 @@
+# yaml-language-server: $schema=https://goreleaser.com/static/schema.json
+version: 2
 project_name: go-hello
 env:
   - GO111MODULE=on
@@ -6,32 +8,23 @@ before:
     - go mod tidy
 builds:
   - main: .
-    binary: mfpgo
+    binary: go-hello
     goos:
-      - windows
+      # - windows
       - linux
     goarch:
       - amd64
-      - 386
-    ignore:
-      - goos: linux
-        goarch: 386
     ldflags:
       - -s -w
-      - -X main.Version={{.Version}}
-      - -X main.Revision={{.ShortCommit}}
+      - -X main.Version={{ .Version }}
+      - -X main.Revision={{ .ShortCommit }}
     env:
       - CGO_ENABLED=0
 archives:
-  - name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
-    replacements:
-      darwin: darwin
-      linux: linux
-      windows: windows
-      386: i386
-      amd64: x86_64
+  - name_template: '{{ .ProjectName }}_{{ .Os }}_{{ if eq .Arch "amd64" }}x86_64{{ else if eq .Arch "386" }}i386{{ else }}{{ .Arch }}{{ end }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
     format_overrides:
       - goos: windows
-        format: zip
+        formats:
+          - zip
 release:
   prerelease: auto
