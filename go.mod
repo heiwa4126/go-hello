@@ -1,6 +1,6 @@
 module github.com/heiwa4126/go-hello
 
-go 1.27.1
+go 1.27
 
 require github.com/Code-Hex/Neo-cowsay/v2 v2.0.4
 
