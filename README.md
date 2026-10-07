@@ -9,9 +9,41 @@ aqua i
 task
 ```
 
+### 実行例
+
+```console
+$ task
+
+task: [run] go run main.go
+
+Version: dev
+Revision: unknown
+ _______________
+< Hello, World! >
+ ---------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+```
+
 ### メモ: Windows の場合
 
-aqua のインストールは`winget install aquapro.aqua`が楽です。
+[aqua](https://github.com/aquaproj/aqua)
+のインストールは
+`winget install aquapro.aqua`
+が楽です。
+
+## 開発中は
+
+```sh
+task fmt
+task check
+task build
+```
+
+などが便利
 
 ## GoReleaser を追加した
 
