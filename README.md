@@ -47,6 +47,17 @@ Revision: unknown
 `winget install aquapro.aqua`
 が楽です。
 
+### メモ: govulncheck
+
+govulncheck だけは go のバージョンにうるさいので
+go をアップデートしたら再度
+
+```sh
+go install golang.org/x/vuln/cmd/govulncheck@latest
+```
+
+してください
+
 ## 開発中は
 
 ```sh
