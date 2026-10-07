@@ -1,4 +1,4 @@
-module heiwa4126/go-hello
+module github.com/heiwa4126/go-hello
 
 go 1.26.8
 

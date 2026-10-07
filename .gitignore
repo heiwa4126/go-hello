@@ -18,6 +18,9 @@ go.work
 .vscode/
 
 dist/
+tmp/
+*.tmp
+tmp.*
 
 go-hello
 go-hello.exe

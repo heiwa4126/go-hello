@@ -2,6 +2,18 @@
 
 GoLang の cowsay で "Hello, World!"
 
+## インストール
+
+次のコマンドでインストールできます。
+
+```sh
+go install github.com/heiwa4126/go-hello@latest
+# または
+go install -trimpath -ldflags="-s -w" github.com/heiwa4126/go-hello@latest
+```
+
+実行ファイルは Go の`$GOBIN`(未設定の場合は`$GOPATH/bin`)に配置されます。
+
 ## 実行
 
 ```sh
