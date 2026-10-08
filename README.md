@@ -93,7 +93,7 @@ go をアップデートしたら再度
 go install golang.org/x/vuln/cmd/govulncheck@latest
 ```
 
-してください
+してください。
 
 ### その他開発サポート
 
