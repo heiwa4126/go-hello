@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"runtime/debug"
 
-	cowsay "github.com/Code-Hex/Neo-cowsay/v2"
+	"github.com/heiwa4126/go-hello/say"
 )
 
 var (
@@ -40,13 +40,6 @@ func main() {
 
 	fmt.Printf("Version: %s\nRevision: %s\n", Version, Revision)
 
-	say, err := cowsay.Say(
-		"Hello, World!",
-		cowsay.Type("default"),
-		cowsay.BallonWidth(40),
-	)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(say)
+	message := say.Say("Hello, World!")
+	fmt.Println(message)
 }

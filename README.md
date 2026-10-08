@@ -4,7 +4,9 @@ GoLang の cowsay で "Hello, World!"
 
 ## インストール
 
-次のコマンドでインストールできます。
+次のコマンドで
+`go-hello`
+をインストールできます。
 
 ```sh
 go install github.com/heiwa4126/go-hello@latest
@@ -14,22 +16,13 @@ go install -trimpath -ldflags="-s -w" github.com/heiwa4126/go-hello@latest
 
 実行ファイルは Go の`$GOBIN`(未設定の場合は`$GOPATH/bin`)に配置されます。
 
-## 実行
-
-```sh
-aqua i
-task
-```
-
 ### 実行例
 
 ```console
-$ task
+$ go-hello
 
-task: [run] go run main.go
-
-Version: dev
-Revision: unknown
+Version: v0.0.5
+Revision: (unknown)
  _______________
 < Hello, World! >
  ---------------
@@ -38,6 +31,44 @@ Revision: unknown
             (__)\       )\/\
                 ||----w |
                 ||     ||
+```
+
+## 別の Go プロジェクトから利用
+
+利用するプロジェクトのディレクトリで module を初期化し、`say`パッケージを追加します。
+
+```sh
+go mod init example.com/hello-sample
+go get github.com/heiwa4126/go-hello/say@latest
+```
+
+次の内容を`main.go`を作成して、
+
+```go
+package main
+
+import (
+    "fmt"
+
+    "github.com/heiwa4126/go-hello/say"
+)
+
+func main() {
+    fmt.Println(say.Say("Hello from another project!"))
+}
+```
+
+で、
+
+```sh
+go run .
+```
+
+## このプロジェクトの開発
+
+```sh
+aqua i
+task
 ```
 
 ### メモ: Windows の場合
@@ -58,7 +89,7 @@ go install golang.org/x/vuln/cmd/govulncheck@latest
 
 してください
 
-## 開発中は
+### その他開発サポート
 
 ```sh
 task fmt
@@ -84,4 +115,4 @@ git tag v9.9.9
 git push --follow-tags
 ```
 
-で Releases が生成される。
+で GitHub Releases が生成される。
