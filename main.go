@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"runtime/debug"
 
 	"github.com/heiwa4126/go-hello/say"
@@ -40,6 +41,11 @@ func main() {
 
 	fmt.Printf("Version: %s\nRevision: %s\n", Version, Revision)
 
-	message := say.Say("Hello, World!")
+	message, err := say.Say("Hello, World!")
+	if err != nil {
+		// panic(err)
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
 	fmt.Println(message)
 }

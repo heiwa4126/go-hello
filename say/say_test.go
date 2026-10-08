@@ -7,7 +7,10 @@ import (
 
 func TestSay(t *testing.T) {
 	message := "Hello, World!"
-	got := Say(message)
+	got, err := Say(message)
+	if err != nil {
+		t.Fatalf("Say(%q) returned an error: %v", message, err)
+	}
 
 	if !strings.Contains(got, "< "+message+" >") {
 		t.Errorf("Say(%q) = %q, want output containing the message in a speech bubble", message, got)

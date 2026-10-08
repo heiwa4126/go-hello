@@ -49,12 +49,18 @@ package main
 
 import (
     "fmt"
+    "os"
 
     "github.com/heiwa4126/go-hello/say"
 )
 
 func main() {
-    fmt.Println(say.Say("Hello from another project!"))
+    message, err := say.Say("Hello from another project!")
+    if err != nil {
+        fmt.Fprintln(os.Stderr, err)
+        os.Exit(1)
+    }
+    fmt.Println(message)
 }
 ```
 
