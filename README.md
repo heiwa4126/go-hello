@@ -10,11 +10,15 @@ GoLang の cowsay で "Hello, World!"
 
 ```sh
 go install github.com/heiwa4126/go-hello@latest
-# または
+```
+
+または
+
+```sh
 go install -trimpath -ldflags="-s -w" github.com/heiwa4126/go-hello@latest
 ```
 
-実行ファイルは Go の`$GOBIN`(未設定の場合は`$GOPATH/bin`)に配置されます。
+実行ファイルは Go の`$GOBIN`(未設定の場合は`$GOPATH/bin`)に配置されます。PATH を設定してください。
 
 ### 実行例
 
@@ -33,7 +37,7 @@ Revision: (unknown)
                 ||     ||
 ```
 
-## 別の Go プロジェクトから利用
+## 別の Go プロジェクトから利用する
 
 利用するプロジェクトのディレクトリで module を初期化し、`say`パッケージを追加します。
 
@@ -105,7 +109,7 @@ task build
 
 などが便利
 
-## GoReleaser を追加した
+## GoReleaser を追加しました
 
 ```sh
 task release
